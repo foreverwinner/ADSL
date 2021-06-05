@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+    </startup>
+
+  <system.serviceModel>
+  <services>
+    
+    <service name="K_Servis.StudentskaSluzba">
+      <host>
+        <baseAddresses>
+          <add baseAddress="net.tcp://localhost:4000/" />
+        </baseAddresses>
+      </host>
+      <!-- Service Endpoints -->
+      <endpoint address="IStudentskaSluzba" binding="netTcpBinding" contract="K_StudentskaSluzba.IStudentskaSluzba" />
+      <endpoint address="IBezbednosniMehanizmi" binding="netTcpBinding" contract="K_StudentskaSluzba.IBezbednosniMehanizmi" />
+    </service>
+
+    <service name="K_Servis.ObradaStanja">
+      <host>
+        <baseAddresses>
+          <add baseAddress="net.tcp://localhost:4000/" />
+        </baseAddresses>
+      </host>
+      <!-- Service Endpoints -->
+      <endpoint address="IStanjeServisa" binding="netTcpBinding" contract="K_StudentskaSluzba.IStanjeServisa" />
+        </service>
+  </services>
+  </system.serviceModel>
+  
+  
+  
+</configuration>
